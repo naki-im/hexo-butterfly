@@ -3,11 +3,11 @@
   <title>naki-im Blog</title>
   
   <subtitle>爱你所爱，知你所知，得你所愿</subtitle>
-  <link href="https://987632.xyz/atom.xml" rel="self"/>
+  <link href="https://www.987632.xyz/atom.xml" rel="self"/>
   
-  <link href="https://987632.xyz/"/>
+  <link href="https://www.987632.xyz/"/>
   <updated>2025-12-07T13:02:28.000Z</updated>
-  <id>https://987632.xyz/</id>
+  <id>https://www.987632.xyz/</id>
   
   <author>
     <name>naki-im</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>给博客加一个线路切换</title>
-    <link href="https://987632.xyz/posts/576d17a3/"/>
-    <id>https://987632.xyz/posts/576d17a3/</id>
+    <link href="https://www.987632.xyz/posts/576d17a3/"/>
+    <id>https://www.987632.xyz/posts/576d17a3/</id>
     <published>2025-12-07T13:02:28.000Z</published>
     <updated>2025-12-07T13:02:28.000Z</updated>
     
@@ -33,27 +33,27 @@
     
     
     
-    <category term="记录" scheme="https://987632.xyz/categories/%E8%AE%B0%E5%BD%95/"/>
+    <category term="记录" scheme="https://www.987632.xyz/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="互联网" scheme="https://987632.xyz/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
+    <category term="互联网" scheme="https://www.987632.xyz/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
     
-    <category term="域名" scheme="https://987632.xyz/tags/%E5%9F%9F%E5%90%8D/"/>
+    <category term="域名" scheme="https://www.987632.xyz/tags/%E5%9F%9F%E5%90%8D/"/>
     
-    <category term="线路切换" scheme="https://987632.xyz/tags/%E7%BA%BF%E8%B7%AF%E5%88%87%E6%8D%A2/"/>
+    <category term="线路切换" scheme="https://www.987632.xyz/tags/%E7%BA%BF%E8%B7%AF%E5%88%87%E6%8D%A2/"/>
     
-    <category term="Hexo" scheme="https://987632.xyz/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://www.987632.xyz/tags/Hexo/"/>
     
-    <category term="CORS" scheme="https://987632.xyz/tags/CORS/"/>
+    <category term="CORS" scheme="https://www.987632.xyz/tags/CORS/"/>
     
-    <category term="博客美化" scheme="https://987632.xyz/tags/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/"/>
+    <category term="博客美化" scheme="https://www.987632.xyz/tags/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>制作一个随机图API</title>
-    <link href="https://987632.xyz/posts/9e1ff682/"/>
-    <id>https://987632.xyz/posts/9e1ff682/</id>
+    <link href="https://www.987632.xyz/posts/9e1ff682/"/>
+    <id>https://www.987632.xyz/posts/9e1ff682/</id>
     <published>2025-11-08T16:18:18.000Z</published>
     <updated>2025-11-08T16:18:18.000Z</updated>
     
@@ -67,25 +67,25 @@
     
     
     
-    <category term="记录" scheme="https://987632.xyz/categories/%E8%AE%B0%E5%BD%95/"/>
+    <category term="记录" scheme="https://www.987632.xyz/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="CDN" scheme="https://987632.xyz/tags/CDN/"/>
+    <category term="CDN" scheme="https://www.987632.xyz/tags/CDN/"/>
     
-    <category term="EdgeOne" scheme="https://987632.xyz/tags/EdgeOne/"/>
+    <category term="EdgeOne" scheme="https://www.987632.xyz/tags/EdgeOne/"/>
     
-    <category term="Serverless函数" scheme="https://987632.xyz/tags/Serverless%E5%87%BD%E6%95%B0/"/>
+    <category term="Serverless函数" scheme="https://www.987632.xyz/tags/Serverless%E5%87%BD%E6%95%B0/"/>
     
-    <category term="随机图API" scheme="https://987632.xyz/tags/%E9%9A%8F%E6%9C%BA%E5%9B%BEAPI/"/>
+    <category term="随机图API" scheme="https://www.987632.xyz/tags/%E9%9A%8F%E6%9C%BA%E5%9B%BEAPI/"/>
     
-    <category term="Backblaze" scheme="https://987632.xyz/tags/Backblaze/"/>
+    <category term="Backblaze" scheme="https://www.987632.xyz/tags/Backblaze/"/>
     
   </entry>
   
   <entry>
     <title>如何获取一个免费的ip6.arpa域名</title>
-    <link href="https://987632.xyz/posts/f8911cd/"/>
-    <id>https://987632.xyz/posts/f8911cd/</id>
+    <link href="https://www.987632.xyz/posts/f8911cd/"/>
+    <id>https://www.987632.xyz/posts/f8911cd/</id>
     <published>2025-11-07T13:46:36.000Z</published>
     <updated>2025-11-07T13:46:36.000Z</updated>
     
@@ -99,27 +99,27 @@
     
     
     
-    <category term="记录" scheme="https://987632.xyz/categories/%E8%AE%B0%E5%BD%95/"/>
+    <category term="记录" scheme="https://www.987632.xyz/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="CDN" scheme="https://987632.xyz/tags/CDN/"/>
+    <category term="CDN" scheme="https://www.987632.xyz/tags/CDN/"/>
     
-    <category term="IPv6" scheme="https://987632.xyz/tags/IPv6/"/>
+    <category term="IPv6" scheme="https://www.987632.xyz/tags/IPv6/"/>
     
-    <category term="ip6.arpa" scheme="https://987632.xyz/tags/ip6-arpa/"/>
+    <category term="ip6.arpa" scheme="https://www.987632.xyz/tags/ip6-arpa/"/>
     
-    <category term="域名" scheme="https://987632.xyz/tags/%E5%9F%9F%E5%90%8D/"/>
+    <category term="域名" scheme="https://www.987632.xyz/tags/%E5%9F%9F%E5%90%8D/"/>
     
-    <category term="DNS" scheme="https://987632.xyz/tags/DNS/"/>
+    <category term="DNS" scheme="https://www.987632.xyz/tags/DNS/"/>
     
-    <category term="CA（证书颁发机构）" scheme="https://987632.xyz/tags/CA%EF%BC%88%E8%AF%81%E4%B9%A6%E9%A2%81%E5%8F%91%E6%9C%BA%E6%9E%84%EF%BC%89/"/>
+    <category term="CA（证书颁发机构）" scheme="https://www.987632.xyz/tags/CA%EF%BC%88%E8%AF%81%E4%B9%A6%E9%A2%81%E5%8F%91%E6%9C%BA%E6%9E%84%EF%BC%89/"/>
     
   </entry>
   
   <entry>
     <title>提升Netlify的中国大陆访问速度</title>
-    <link href="https://987632.xyz/posts/b0c1b58e/"/>
-    <id>https://987632.xyz/posts/b0c1b58e/</id>
+    <link href="https://www.987632.xyz/posts/b0c1b58e/"/>
+    <id>https://www.987632.xyz/posts/b0c1b58e/</id>
     <published>2025-10-03T10:19:23.000Z</published>
     <updated>2025-10-03T10:19:23.000Z</updated>
     
@@ -133,33 +133,33 @@
     
     
     
-    <category term="记录" scheme="https://987632.xyz/categories/%E8%AE%B0%E5%BD%95/"/>
+    <category term="记录" scheme="https://www.987632.xyz/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="互联网" scheme="https://987632.xyz/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
+    <category term="互联网" scheme="https://www.987632.xyz/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
     
-    <category term="HTTPS" scheme="https://987632.xyz/tags/HTTPS/"/>
+    <category term="HTTPS" scheme="https://www.987632.xyz/tags/HTTPS/"/>
     
-    <category term="SSL" scheme="https://987632.xyz/tags/SSL/"/>
+    <category term="SSL" scheme="https://www.987632.xyz/tags/SSL/"/>
     
-    <category term="TLS" scheme="https://987632.xyz/tags/TLS/"/>
+    <category term="TLS" scheme="https://www.987632.xyz/tags/TLS/"/>
     
-    <category term="CDN" scheme="https://987632.xyz/tags/CDN/"/>
+    <category term="CDN" scheme="https://www.987632.xyz/tags/CDN/"/>
     
-    <category term="IPv6" scheme="https://987632.xyz/tags/IPv6/"/>
+    <category term="IPv6" scheme="https://www.987632.xyz/tags/IPv6/"/>
     
-    <category term="域名" scheme="https://987632.xyz/tags/%E5%9F%9F%E5%90%8D/"/>
+    <category term="域名" scheme="https://www.987632.xyz/tags/%E5%9F%9F%E5%90%8D/"/>
     
-    <category term="DNS" scheme="https://987632.xyz/tags/DNS/"/>
+    <category term="DNS" scheme="https://www.987632.xyz/tags/DNS/"/>
     
-    <category term="IPv4" scheme="https://987632.xyz/tags/IPv4/"/>
+    <category term="IPv4" scheme="https://www.987632.xyz/tags/IPv4/"/>
     
   </entry>
   
   <entry>
     <title>对一些CDN和静态托管的评测结果</title>
-    <link href="https://987632.xyz/posts/7a44deef/"/>
-    <id>https://987632.xyz/posts/7a44deef/</id>
+    <link href="https://www.987632.xyz/posts/7a44deef/"/>
+    <id>https://www.987632.xyz/posts/7a44deef/</id>
     <published>2025-09-19T15:42:26.000Z</published>
     <updated>2025-09-19T15:42:26.000Z</updated>
     
@@ -173,35 +173,35 @@
     
     
     
-    <category term="记录" scheme="https://987632.xyz/categories/%E8%AE%B0%E5%BD%95/"/>
+    <category term="记录" scheme="https://www.987632.xyz/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="互联网" scheme="https://987632.xyz/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
+    <category term="互联网" scheme="https://www.987632.xyz/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
     
-    <category term="HTTPS" scheme="https://987632.xyz/tags/HTTPS/"/>
+    <category term="HTTPS" scheme="https://www.987632.xyz/tags/HTTPS/"/>
     
-    <category term="SSL" scheme="https://987632.xyz/tags/SSL/"/>
+    <category term="SSL" scheme="https://www.987632.xyz/tags/SSL/"/>
     
-    <category term="TLS" scheme="https://987632.xyz/tags/TLS/"/>
+    <category term="TLS" scheme="https://www.987632.xyz/tags/TLS/"/>
     
-    <category term="CDN" scheme="https://987632.xyz/tags/CDN/"/>
+    <category term="CDN" scheme="https://www.987632.xyz/tags/CDN/"/>
     
-    <category term="IPv6" scheme="https://987632.xyz/tags/IPv6/"/>
+    <category term="IPv6" scheme="https://www.987632.xyz/tags/IPv6/"/>
     
-    <category term="域名" scheme="https://987632.xyz/tags/%E5%9F%9F%E5%90%8D/"/>
+    <category term="域名" scheme="https://www.987632.xyz/tags/%E5%9F%9F%E5%90%8D/"/>
     
-    <category term="DNS" scheme="https://987632.xyz/tags/DNS/"/>
+    <category term="DNS" scheme="https://www.987632.xyz/tags/DNS/"/>
     
-    <category term="IPv4" scheme="https://987632.xyz/tags/IPv4/"/>
+    <category term="IPv4" scheme="https://www.987632.xyz/tags/IPv4/"/>
     
-    <category term="记录" scheme="https://987632.xyz/tags/%E8%AE%B0%E5%BD%95/"/>
+    <category term="记录" scheme="https://www.987632.xyz/tags/%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>你的网站是怎么被墙的</title>
-    <link href="https://987632.xyz/posts/6daf32bc/"/>
-    <id>https://987632.xyz/posts/6daf32bc/</id>
+    <link href="https://www.987632.xyz/posts/6daf32bc/"/>
+    <id>https://www.987632.xyz/posts/6daf32bc/</id>
     <published>2025-08-28T14:57:35.000Z</published>
     <updated>2025-08-28T14:57:35.000Z</updated>
     
@@ -216,31 +216,31 @@
     
     
     
-    <category term="科普" scheme="https://987632.xyz/categories/%E7%A7%91%E6%99%AE/"/>
+    <category term="科普" scheme="https://www.987632.xyz/categories/%E7%A7%91%E6%99%AE/"/>
     
     
-    <category term="算法" scheme="https://987632.xyz/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://www.987632.xyz/tags/%E7%AE%97%E6%B3%95/"/>
     
-    <category term="互联网" scheme="https://987632.xyz/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
+    <category term="互联网" scheme="https://www.987632.xyz/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
     
-    <category term="内容审核" scheme="https://987632.xyz/tags/%E5%86%85%E5%AE%B9%E5%AE%A1%E6%A0%B8/"/>
+    <category term="内容审核" scheme="https://www.987632.xyz/tags/%E5%86%85%E5%AE%B9%E5%AE%A1%E6%A0%B8/"/>
     
-    <category term="访问控制" scheme="https://987632.xyz/tags/%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/"/>
+    <category term="访问控制" scheme="https://www.987632.xyz/tags/%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/"/>
     
-    <category term="敏感词" scheme="https://987632.xyz/tags/%E6%95%8F%E6%84%9F%E8%AF%8D/"/>
+    <category term="敏感词" scheme="https://www.987632.xyz/tags/%E6%95%8F%E6%84%9F%E8%AF%8D/"/>
     
-    <category term="HTTPS" scheme="https://987632.xyz/tags/HTTPS/"/>
+    <category term="HTTPS" scheme="https://www.987632.xyz/tags/HTTPS/"/>
     
-    <category term="SSL" scheme="https://987632.xyz/tags/SSL/"/>
+    <category term="SSL" scheme="https://www.987632.xyz/tags/SSL/"/>
     
-    <category term="TLS" scheme="https://987632.xyz/tags/TLS/"/>
+    <category term="TLS" scheme="https://www.987632.xyz/tags/TLS/"/>
     
   </entry>
   
   <entry>
     <title>如何科学地消除敏感词</title>
-    <link href="https://987632.xyz/posts/4ede31b/"/>
-    <id>https://987632.xyz/posts/4ede31b/</id>
+    <link href="https://www.987632.xyz/posts/4ede31b/"/>
+    <id>https://www.987632.xyz/posts/4ede31b/</id>
     <published>2025-08-13T08:39:15.000Z</published>
     <updated>2025-08-13T08:39:15.000Z</updated>
     
@@ -254,27 +254,27 @@
     
     
     
-    <category term="科普" scheme="https://987632.xyz/categories/%E7%A7%91%E6%99%AE/"/>
+    <category term="科普" scheme="https://www.987632.xyz/categories/%E7%A7%91%E6%99%AE/"/>
     
     
-    <category term="算法" scheme="https://987632.xyz/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://www.987632.xyz/tags/%E7%AE%97%E6%B3%95/"/>
     
-    <category term="内容审核" scheme="https://987632.xyz/tags/%E5%86%85%E5%AE%B9%E5%AE%A1%E6%A0%B8/"/>
+    <category term="内容审核" scheme="https://www.987632.xyz/tags/%E5%86%85%E5%AE%B9%E5%AE%A1%E6%A0%B8/"/>
     
-    <category term="敏感词" scheme="https://987632.xyz/tags/%E6%95%8F%E6%84%9F%E8%AF%8D/"/>
+    <category term="敏感词" scheme="https://www.987632.xyz/tags/%E6%95%8F%E6%84%9F%E8%AF%8D/"/>
     
-    <category term="NLP" scheme="https://987632.xyz/tags/NLP/"/>
+    <category term="NLP" scheme="https://www.987632.xyz/tags/NLP/"/>
     
-    <category term="机器学习" scheme="https://987632.xyz/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="https://www.987632.xyz/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="深度学习" scheme="https://987632.xyz/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://www.987632.xyz/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>如何安全地加密数据</title>
-    <link href="https://987632.xyz/posts/26dbb5b5/"/>
-    <id>https://987632.xyz/posts/26dbb5b5/</id>
+    <link href="https://www.987632.xyz/posts/26dbb5b5/"/>
+    <id>https://www.987632.xyz/posts/26dbb5b5/</id>
     <published>2025-08-09T05:58:49.000Z</published>
     <updated>2025-08-09T05:58:49.000Z</updated>
     
@@ -288,29 +288,29 @@
     
     
     
-    <category term="科普" scheme="https://987632.xyz/categories/%E7%A7%91%E6%99%AE/"/>
+    <category term="科普" scheme="https://www.987632.xyz/categories/%E7%A7%91%E6%99%AE/"/>
     
     
-    <category term="密码学" scheme="https://987632.xyz/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    <category term="密码学" scheme="https://www.987632.xyz/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
     
-    <category term="加密算法" scheme="https://987632.xyz/tags/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/"/>
+    <category term="加密算法" scheme="https://www.987632.xyz/tags/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/"/>
     
-    <category term="对称加密" scheme="https://987632.xyz/tags/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/"/>
+    <category term="对称加密" scheme="https://www.987632.xyz/tags/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/"/>
     
-    <category term="非对称加密" scheme="https://987632.xyz/tags/%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/"/>
+    <category term="非对称加密" scheme="https://www.987632.xyz/tags/%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/"/>
     
-    <category term="AES" scheme="https://987632.xyz/tags/AES/"/>
+    <category term="AES" scheme="https://www.987632.xyz/tags/AES/"/>
     
-    <category term="RSA" scheme="https://987632.xyz/tags/RSA/"/>
+    <category term="RSA" scheme="https://www.987632.xyz/tags/RSA/"/>
     
-    <category term="ECC" scheme="https://987632.xyz/tags/ECC/"/>
+    <category term="ECC" scheme="https://www.987632.xyz/tags/ECC/"/>
     
   </entry>
   
   <entry>
     <title>网络通信是怎么加密的</title>
-    <link href="https://987632.xyz/posts/a3e6861f/"/>
-    <id>https://987632.xyz/posts/a3e6861f/</id>
+    <link href="https://www.987632.xyz/posts/a3e6861f/"/>
+    <id>https://www.987632.xyz/posts/a3e6861f/</id>
     <published>2025-08-04T08:20:28.000Z</published>
     <updated>2025-08-04T08:20:28.000Z</updated>
     
@@ -324,33 +324,33 @@
     
     
     
-    <category term="科普" scheme="https://987632.xyz/categories/%E7%A7%91%E6%99%AE/"/>
+    <category term="科普" scheme="https://www.987632.xyz/categories/%E7%A7%91%E6%99%AE/"/>
     
     
-    <category term="HTTPS" scheme="https://987632.xyz/tags/HTTPS/"/>
+    <category term="HTTPS" scheme="https://www.987632.xyz/tags/HTTPS/"/>
     
-    <category term="SSL" scheme="https://987632.xyz/tags/SSL/"/>
+    <category term="SSL" scheme="https://www.987632.xyz/tags/SSL/"/>
     
-    <category term="TLS" scheme="https://987632.xyz/tags/TLS/"/>
+    <category term="TLS" scheme="https://www.987632.xyz/tags/TLS/"/>
     
-    <category term="CA（证书颁发机构）" scheme="https://987632.xyz/tags/CA%EF%BC%88%E8%AF%81%E4%B9%A6%E9%A2%81%E5%8F%91%E6%9C%BA%E6%9E%84%EF%BC%89/"/>
+    <category term="CA（证书颁发机构）" scheme="https://www.987632.xyz/tags/CA%EF%BC%88%E8%AF%81%E4%B9%A6%E9%A2%81%E5%8F%91%E6%9C%BA%E6%9E%84%EF%BC%89/"/>
     
-    <category term="MITM" scheme="https://987632.xyz/tags/MITM/"/>
+    <category term="MITM" scheme="https://www.987632.xyz/tags/MITM/"/>
     
-    <category term="前向保密" scheme="https://987632.xyz/tags/%E5%89%8D%E5%90%91%E4%BF%9D%E5%AF%86/"/>
+    <category term="前向保密" scheme="https://www.987632.xyz/tags/%E5%89%8D%E5%90%91%E4%BF%9D%E5%AF%86/"/>
     
-    <category term="数字证书" scheme="https://987632.xyz/tags/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/"/>
+    <category term="数字证书" scheme="https://www.987632.xyz/tags/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/"/>
     
-    <category term="证书透明度" scheme="https://987632.xyz/tags/%E8%AF%81%E4%B9%A6%E9%80%8F%E6%98%8E%E5%BA%A6/"/>
+    <category term="证书透明度" scheme="https://www.987632.xyz/tags/%E8%AF%81%E4%B9%A6%E9%80%8F%E6%98%8E%E5%BA%A6/"/>
     
-    <category term="信任链" scheme="https://987632.xyz/tags/%E4%BF%A1%E4%BB%BB%E9%93%BE/"/>
+    <category term="信任链" scheme="https://www.987632.xyz/tags/%E4%BF%A1%E4%BB%BB%E9%93%BE/"/>
     
   </entry>
   
   <entry>
     <title>互联网广告捞金指南</title>
-    <link href="https://987632.xyz/posts/fd50a647/"/>
-    <id>https://987632.xyz/posts/fd50a647/</id>
+    <link href="https://www.987632.xyz/posts/fd50a647/"/>
+    <id>https://www.987632.xyz/posts/fd50a647/</id>
     <published>2025-07-24T04:43:19.000Z</published>
     <updated>2025-07-24T04:43:19.000Z</updated>
     
@@ -365,29 +365,29 @@
     
     
     
-    <category term="科普" scheme="https://987632.xyz/categories/%E7%A7%91%E6%99%AE/"/>
+    <category term="科普" scheme="https://www.987632.xyz/categories/%E7%A7%91%E6%99%AE/"/>
     
     
-    <category term="互联网广告" scheme="https://987632.xyz/tags/%E4%BA%92%E8%81%94%E7%BD%91%E5%B9%BF%E5%91%8A/"/>
+    <category term="互联网广告" scheme="https://www.987632.xyz/tags/%E4%BA%92%E8%81%94%E7%BD%91%E5%B9%BF%E5%91%8A/"/>
     
-    <category term="广告变现" scheme="https://987632.xyz/tags/%E5%B9%BF%E5%91%8A%E5%8F%98%E7%8E%B0/"/>
+    <category term="广告变现" scheme="https://www.987632.xyz/tags/%E5%B9%BF%E5%91%8A%E5%8F%98%E7%8E%B0/"/>
     
-    <category term="程序化广告" scheme="https://987632.xyz/tags/%E7%A8%8B%E5%BA%8F%E5%8C%96%E5%B9%BF%E5%91%8A/"/>
+    <category term="程序化广告" scheme="https://www.987632.xyz/tags/%E7%A8%8B%E5%BA%8F%E5%8C%96%E5%B9%BF%E5%91%8A/"/>
     
-    <category term="CPM" scheme="https://987632.xyz/tags/CPM/"/>
+    <category term="CPM" scheme="https://www.987632.xyz/tags/CPM/"/>
     
-    <category term="用户画像" scheme="https://987632.xyz/tags/%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/"/>
+    <category term="用户画像" scheme="https://www.987632.xyz/tags/%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/"/>
     
-    <category term="算法" scheme="https://987632.xyz/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://www.987632.xyz/tags/%E7%AE%97%E6%B3%95/"/>
     
-    <category term="竞价广告" scheme="https://987632.xyz/tags/%E7%AB%9E%E4%BB%B7%E5%B9%BF%E5%91%8A/"/>
+    <category term="竞价广告" scheme="https://www.987632.xyz/tags/%E7%AB%9E%E4%BB%B7%E5%B9%BF%E5%91%8A/"/>
     
   </entry>
   
   <entry>
     <title>记录</title>
-    <link href="https://987632.xyz/posts/e797f254/"/>
-    <id>https://987632.xyz/posts/e797f254/</id>
+    <link href="https://www.987632.xyz/posts/e797f254/"/>
+    <id>https://www.987632.xyz/posts/e797f254/</id>
     <published>1970-01-01T00:00:00.000Z</published>
     <updated>1970-01-01T00:00:00.000Z</updated>
     
@@ -405,10 +405,10 @@
     
     
     
-    <category term="记录" scheme="https://987632.xyz/categories/%E8%AE%B0%E5%BD%95/"/>
+    <category term="记录" scheme="https://www.987632.xyz/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="记录" scheme="https://987632.xyz/tags/%E8%AE%B0%E5%BD%95/"/>
+    <category term="记录" scheme="https://www.987632.xyz/tags/%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
