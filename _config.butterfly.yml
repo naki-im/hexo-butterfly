@@ -626,14 +626,14 @@ twikoo:
 # Giscus
 # https://giscus.app/
 giscus:
-  repo: naki-im/blog
-  repo_id: R_kgDOPWrGsg
-  category_id: DIC_kwDOPWrGss4Cuh6V
+  repo: naki-im/blog-comments
+  repo_id: R_kgDOQsQ7zg
+  category_id: DIC_kwDOQsQ7zs4C0C73
   light_theme: light
   dark_theme: dark
-  js: https://giscus.987632.xyz/client.js
+  js:
   option:
-    loading: lazy
+    data-loading: lazy
     data-lang: zh-CN
 
 # Remark42
