@@ -267,7 +267,7 @@ footer:
   copyright:
     enable: false
     version: false
-  custom_text: All Rights Reserved.<br><a href="/sitemap.txt">网站地图</a>|<a href="/atom.xml">RSS</a><br>
+  custom_text: All Rights Reserved.<br><a href="/sitemap.txt">网站地图</a> | <a href="/atom.xml">RSS</a><br>
 # --------------------------------------
 # Aside Settings
 # --------------------------------------
