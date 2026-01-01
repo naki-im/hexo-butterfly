@@ -11,15 +11,17 @@ title: '关于作者'
 ## 关于联系方式：
 
 直接点页面右边作者资料卡下面的图标就行，如果你使用移动端就往下划到资料卡。如果没显示……请检查你是不是禁用了js.
+<noscript>不开js连我网站界面都打不开，笑死</noscript>>
 
 ## 网站运行：
 
 本站托管于[vercel](https://www.vercel.com/)，由EdgeOne CDN提供图像分发支持，由CloudFlare R2和EdgeOne提供文件存储和分发支持，由Spaceship提供域名注册服务。
 
-## 鸣谢列表（排名不分先后，尽管都没给赞助就是）：
+## 鸣谢列表（排名不分先后）：
 
 - Vercel, Inc. （免费套餐真香）
 - JSDMirror （免费加速真好用）
 - CloudFlare, Inc. （免费对象存储真香）
 - GitHub Operations, LLC（免费仓库真香）
-- ~~Spaceship, Inc.~~（真·啥也没给）
+- ~~Spaceship, Inc.（啥也没给）~~
+- ~~Dynadot Inc.（同上）~~
