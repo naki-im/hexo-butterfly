@@ -92,7 +92,7 @@ category_img:
 category_per_img:
 
 # The background image of footer
-footer_img: false
+footer_img: "#095485"
 
 # Website Background
 # Can set it to color or image url
@@ -167,7 +167,8 @@ subtitle:
   # 3 - jinrishici.com
   source: 1
   # If you close the typewriter effect, the subtitle will only show the first line of sub
-  sub: 爱你所爱，知你所知，得你所愿~^_^~
+  sub: 
+    - 爱你所爱，知你所知，得你所愿~^_^~
 
 # Article layout on the homepage
 # 1: Cover on the left, info on the right
@@ -177,7 +178,7 @@ subtitle:
 # 5: Info displayed on the cover
 # 6: Masonry layout - Cover on top, info on the bottom
 # 7: Masonry layout - Info displayed on the cover
-index_layout: 3
+index_layout: 2
 
 # Display the article introduction on homepage
 # 1: description
@@ -796,7 +797,7 @@ preloader:
   # 2. pace (progress bar)
   source: 1
   # pace theme (see https://codebyzach.github.io/pace/)
-  pace_css_url: https://r2.987632.xyz/center-simple.css
+  pace_css_url:
 
 # Page Transition
 enter_transitions: true
