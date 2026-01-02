@@ -1,8 +1,4 @@
 top:
-  - name: 线路切换
-    icon: fa-wave-square
-    order:
-    html: <iframe src="/static/route.html" loading="lazy" style="width:100%; height:100%; border:none;"></iframe>
   - name: IP信息
     icon: fa-globe
     order:
