@@ -1,7 +1,7 @@
 ---
 title: 制作一个随机图API
 categories:
-  - 记录
+  - 教程
 tags:
   - CDN
   - EdgeOne

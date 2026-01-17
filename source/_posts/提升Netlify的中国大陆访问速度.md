@@ -1,7 +1,7 @@
 ---
 title: 提升Netlify的中国大陆访问速度
 categories:
-  - 记录
+  - 教程
 tags:
   - HTTPS
   - TLS
