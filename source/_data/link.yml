@@ -3,13 +3,13 @@
   link_list:
     - name: Hexo
       link: https://hexo.io/zh-cn
-      avatar: https://hexo.io/logo.svg
+      avatar: https://static.987632.xyz/icon/hexo.svg
       descr: 简单快速的网站框架
     - name: Google
       link: https://www.google.com/
-      avatar: fab fa-google
+      avatar: https://static.987632.xyz/icon/google.svg
       descr: 可能是迄今为止最全面的搜索引擎
     - name: Bing
       link: https://bing.com/
-      avatar: fab fa-bing
+      avatar: https://static.987632.xyz/icon/bing.png
       descr: 可能是迄今为止最好用的搜索引擎
