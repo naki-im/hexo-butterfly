@@ -6,7 +6,7 @@
   <link href="https://www.987632.xyz/atom.xml" rel="self"/>
   
   <link href="https://www.987632.xyz/"/>
-  <updated>2026-01-17T10:48:32.000Z</updated>
+  <updated>2026-02-16T19:23:23.000Z</updated>
   <id>https://www.987632.xyz/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>代理协议是如何通过流量审计的</title>
+    <link href="https://www.987632.xyz/posts/aff4074/"/>
+    <id>https://www.987632.xyz/posts/aff4074/</id>
+    <published>2026-02-16T19:23:23.000Z</published>
+    <updated>2026-02-16T19:23:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="0-前言"><a href="#0-前言" class="headerlink" title="0.前言"></a>0.前言</h1><p>2011年，Google决定关闭其在中国大陆地区的搜索服务<code>google.cn</code>，此后将当地用户均重定向至<code>google.com.hk</code>，当时<code>google.com</code>由于架构调整已经难以正常打开，这是当地第一次开始大规模使用代理访问国际网站的导火索。此后的十多年里，各类代理协议被发明，也有协议被抛弃不用，由简单到复杂，由旗帜鲜明到大隐于市，更迭十余年，成一气候。</p><h1 id="1-万物之源：Shadowsocks"><a href="#1-万物之源：Shadowsocks" class="headerlink" title="1.万物之源：Shadowsocks"></a>1.万物之源：Shadowsocks</h1><h2 id="1-1-背景"><a href="#1-1-背景" class="headerlink" title="1.1 背景"></a>1.1 背景</h2><p>为解决当时部分国际网站的访问困难问题，部分技术从业者和开源社区贡献者开发出第一个广为人知的代理协议：Shadowsocks，简称SS，其图标形似纸飞机，民间也有称其为飞机的叫法，后期提供这些节点的供应商也被称为“机场”。</p><h2 id="1-2-技术特点"><a href="#1-2-技术特点" class="headerlink" title="1.2 技术特点"></a>1.2 技术特点</h2><p>Shadowsocks基于Socks5代理方式，最早由V2EX论坛用户“clowwindy”2012年4月发布，其特点为将流量直接加密混淆，使之没有任何特征，形似无规律的数据流。早期该协议通过简单的加密方法和每次请求仅转发一个连接的设计获得较好的性能，在移动端设备上相对较为省电。其使用自定义的协议进行加密通信，并不保证做到密码学安全的传输，原作者亦自称其协议仅为自用，其对通信双方的鉴权仅为预共享密钥（即密码），也不提供前向保密。至今在部分中高端的服务商处仍在使用此协议以获取较高的性能。<br>Shadowsocks首次提出了将代理服务器拆分为本地代理和远程代理两个服务器的概念，本地服务器即用户安装在本地计算机的客户端软件，远程代理服务器即对外开放Shadowsocks代理服务的服务器。Shadowsocks在传输数据时，本地的代理服务器收到计算机传入的数据后将数据按照配置的方式和密钥（也就是客户端配置里的密码）加密，构造数据包发往远程代理服务器，远程代理服务器收到数据后解密数据包获取原始请求数据，将其转发到目标服务器，目标服务器返回响应后远程代理服务器再将返回数据加密发回用户本地代理服务器，用户本地代理服务器解密后将数据传回对应的计算机程序（通常是Web浏览器），实现代理访问互联网的效果。<br>简单地说，Shadowsocks的设计哲学就是简单粗暴，直捣黄龙。从写程序的角度看，其设计就是为解决问题而生的。这样的设计既赋予了其至今未能被其他基于TCP的代理协议完全颠覆的性能水平（但其性能后续已经被基于UDP的代理协议超越，但这是利用传输层协议底层设计的特殊情况，故原结论仍然成立），也导致其流量特征极度明显，已经能够被精确地识别并阻断。</p><h2 id="1-3-设计问题"><a href="#1-3-设计问题" class="headerlink" title="1.3 设计问题"></a>1.3 设计问题</h2><p>2015年，Shadowsocks原作者报告称Shadowsocks当时支持使用非AEAD的加密方式存在被主动探测的风险，后继开发者试图引入One Time Auth（OTA）试图解决未果，Shadowsocks后续更新中使用了AEAD加密方式解决此问题。<br>当时主动探测的漏洞在于，若中间设备监听网络流量，将客户端到Shadowsocks服务器的部分数据包修改几个字节后再发送（即重放攻击），由于非AEAD的加密方式无法验证数据包的完整性，会返回一个特定的错误，此返回数据和正常的Web服务器不同，因而可以被主动探测识别而封禁。</p><h2 id="1-4-ShadowsocksR"><a href="#1-4-ShadowsocksR" class="headerlink" title="1.4 ShadowsocksR"></a>1.4 ShadowsocksR</h2><p>ShadowsocksR是Shadowsocks的改进版，在Shadowsocks原版的基础上增加了一些混淆方式，但其地位存在争议，主要为早期违反开源协议、原作者反对魔改等，现已鲜少出现，彻底凉透。</p><h2 id="2-继任天下：V2ray"><a href="#2-继任天下：V2ray" class="headerlink" title="2.继任天下：V2ray"></a>2.继任天下：V2ray</h2><p>V2ray的整套代理模式均为其自行设计，其设计本身同样受Shadowsocks设计影响，同样采用了本地代理服务器和远程代理服务器的双服务器设计。V2ray原创的Vmess协议将数据加上其本身的加密和外层封装的TLS两层加密，导致性能开销较大，不适合部署在低性能设备上。V2ray支持使用多种传输协议和加密模式，支持的主要协议有WebSocket和TCP等，加密方式主要是TLS，也可以不启用加密。V2ray分为Vmess和Vless两种，Vmess协议自身就对数据进行加密，而Vless默认不做加密。</p><h2 id="2-1-Vmess"><a href="#2-1-Vmess" class="headerlink" title="2.1 Vmess"></a>2.1 Vmess</h2><p>Vmess协议自身在传输数据时会将流量进行加密，然后根据配置决定是否进行第二次加密。后期Vmess由于双层加密导致TLS报文的大小存在统计学特征，被广泛认为已经能够被准确识别，这也是后期大多数代理协议被准确识别的原因之一。<br>另一个特征是尽管Websocket+TLS的模式看似和正常的HTTPS流量完全相同，但主动探测则会发现其流量目的没有任何网站，也就是发送HTTP请求后不会得到正常的应答，用户们通常选择在其上增加一个Web服务器作为伪装网页规避检查。流量审计方对于这类代理通常通过大量流量的统计学特征识别，Vmess的外在表现之一就是长期大流量和同一个网站进行通信，而这类流量在正常的Web上不多见，其常被用于识别Vmess的代理。</p><h2 id="2-2-Vless"><a href="#2-2-Vless" class="headerlink" title="2.2 Vless"></a>2.2 Vless</h2><p>Vless默认对流量不加密，也就是说，Vless若不主动配置外层的加密方式，流量就是明文的。但模块化的设计使得其能够一直存活，并以不同的加密方式、传输协议、流量控制、伪装方法不断演进而不必改动其协议本身的源码。早年Vless通常使用Websocket+TLS的模式，配置和Vmess基本相同。<br>在网络审计设备具备DPI能力后，Vless协议的伪装方式和传输方法经历过数次更迭，主要围绕在具体的某个小特征上进行修改。Vless也常和CDN一同使用，也就是用户群里所谓的“套CDN”，通过大型CDN转发流量，以实现隐匿真实服务器地址的效果。但同样的，早期的Vless也和Vmess有同样的困境，即流量的特征被检查。</p><h2 id="2-3-Vmess和早期Vless被识别的方式"><a href="#2-3-Vmess和早期Vless被识别的方式" class="headerlink" title="2.3 Vmess和早期Vless被识别的方式"></a>2.3 Vmess和早期Vless被识别的方式</h2><p>一开始，网络审计方在用户使用此类协议时尚且不能察觉其特征，流量被成功放行通过审计；一段时间后，审计方会发现用户的流量几乎都在同一个网站（也就是Vmess或Vless的伪装网页），对网站主动探测得到的确实是一个看似正常的网页，审计方出于防止误杀误判的目的，通常会将这个服务器和网站列入观察名单，同时继续放行通往此网站的流量，这个过程对于用户而言完全透明，用户继续使用一段时间后，审计方发现流量仍然是长时间大流量的异常特征，在对其性质为代理服务器的判断置信度足够高时就会阻断该服务器。</p><h1 id="3-缝缝补补又三年：Trojan"><a href="#3-缝缝补补又三年：Trojan" class="headerlink" title="3.缝缝补补又三年：Trojan"></a>3.缝缝补补又三年：Trojan</h1><p>Trojan解决了一些V2ray存在的问题，但事实上它的设计仍然是借鉴Websocket+TLS的思想，也就是伪装成互联网最常见的HTTPS流量，但在审计方看来，这两种流量实际上没什么两样。Trojan主要解决的是部署难度问题和双层加密问题，Trojan选择走轻量化路线，大幅简化了部署的过程，降低部署难度，同时写死只支持Websocket+TLS一种传输方式，减少了自由发挥的空间。看起来Trojan的设计几乎是照抄的Vless+Websocket+TLS+Web？这不完全对，这个观点还有争议，有这样认为的，也有反对的。Trojan的一个缺点是宣传误导人，开发组先拉踩使用强加密的协议，然后又说自己伪装HTTPS——但事实上HTTPS就是TLS加密，TLS本身就属于强加密，这不误导人么？另一个缺点是伪装网页的服务器不支持反向代理。Trojan本身不在于创新而在于量产，用标准化的协议本身降低被识别的风险。</p><blockquote><p>——讲真，Trojan能写的就这么点，我写不下去了。</p></blockquote><h1 id="4-瞒天过海：Reality"><a href="#4-瞒天过海：Reality" class="headerlink" title="4.瞒天过海：Reality"></a>4.瞒天过海：Reality</h1><p>Reality严格意义上其实不是个协议，它属于一种混淆方式，但不是独立的协议，有Vless+Reality但没有光杆的Reality。但它的运作方式很有参考价值，也很出名，能力确实强大，就单开一章讲。</p><p>Reality的核心是通过借用别人的身份瞒天过海骗过网络审计设备，它的配置是通过开启一个反向代理（不是应用层的反向代理，是网络层的反向代理，也就是直接复制数据包内容透传）来透传大型合法网站的握手信息，使得主动探测只能得出这是一个大型网站的服务器的结论，利用阻断大型网站的巨大成本为自己打掩护。<br>——然后呢？没了，核心就这些。</p><h1 id="5-暴力美学：Hysteria"><a href="#5-暴力美学：Hysteria" class="headerlink" title="5.暴力美学：Hysteria"></a>5.暴力美学：Hysteria</h1><p>Hysteria，其原本的英文含义为“歇斯底里”，指人癫狂时的状态，开发者以此命名可见这个协议有多疯。这是迄今为止最粗暴的协议之一，甚至不逊于Shadowsocks——对，十年来Shadowsocks的性能第一地位被掀翻了。<br>Hysteria的设计主打一个暴力美学，其基于UDP，不同于Shadowsocks所依赖的TCP，UDP不需要保证连接的可靠性，只管一味发包就行。Hysteria的特点之一是抢带宽，一般来说，网络拥塞控制算法会在网络拥堵时大幅降速以保证网络带宽不会过载，但Hysteria做了一个违背祖宗的决定，也就是无论如何都不降速，永远按配置文件规定的速度发送数据，除非网络直接爆炸然后谁也发不了。如果配置文件没写速度，双方就会通过BBR算法协商一个速度来探测网络的最大带宽，然后顶着这个带宽发送数据，主打一个不撞南墙不回头。缺点也有，就是UDP流量历来不被各大ISP待见，高峰期是第一个被QoS限速扔出高优先级队伍的——这也就是为什么说Hysteria晚高峰会卡，原因就在这。</p><h1 id="6-温和激进：Tuic"><a href="#6-温和激进：Tuic" class="headerlink" title="6.温和激进：Tuic"></a>6.温和激进：Tuic</h1><p>Tuic的设计理念和Hysteria基本相同，但其发送数据的方式更加温和，都是UDP上的协议，Tuic基于QUIC，做到了0-RTT握手（也就是说，客户端发送的第一个包就可以携带数据），还支持多路复用（Multiplexing），性能做到了和Hysteria有来有回的水平，但它的缺点和Hysteria也如出一辙：QoS优先级太低，晚高峰限速直接卡成狗——但这是UDP+大流量这个特征的协议共有的问题，属于是互联网早期就达成的共识，这个无解，只能靠着时间逐渐改观。Tuic属于是主打一个不撞南墙也不回头，因为根本没撞过南墙，自然不用回头。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;0-前言&quot;&gt;&lt;a href=&quot;#0-前言&quot; class=&quot;headerlink&quot; title=&quot;0.前言&quot;&gt;&lt;/a&gt;0.前言&lt;/h1&gt;&lt;p&gt;2011年，Google决定关闭其在中国大陆地区的搜索服务&lt;code&gt;google.cn&lt;/code&gt;，此后将当地用户均重定</summary>
+      
+    
+    
+    
+    <category term="科普" scheme="https://www.987632.xyz/categories/%E7%A7%91%E6%99%AE/"/>
+    
+    
+    <category term="互联网" scheme="https://www.987632.xyz/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
+    
+    <category term="代理" scheme="https://www.987632.xyz/tags/%E4%BB%A3%E7%90%86/"/>
+    
+    <category term="CDN" scheme="https://www.987632.xyz/tags/CDN/"/>
+    
+    <category term="域名" scheme="https://www.987632.xyz/tags/%E5%9F%9F%E5%90%8D/"/>
+    
+    <category term="SSL" scheme="https://www.987632.xyz/tags/SSL/"/>
+    
+    <category term="TLS" scheme="https://www.987632.xyz/tags/TLS/"/>
+    
+  </entry>
   
   <entry>
     <title>给红米AX5路由器刷一个Nwrt固件</title>
@@ -70,11 +104,11 @@
     <category term="记录" scheme="https://www.987632.xyz/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="HTTPS" scheme="https://www.987632.xyz/tags/HTTPS/"/>
-    
     <category term="SSL" scheme="https://www.987632.xyz/tags/SSL/"/>
     
     <category term="TLS" scheme="https://www.987632.xyz/tags/TLS/"/>
+    
+    <category term="HTTPS" scheme="https://www.987632.xyz/tags/HTTPS/"/>
     
     <category term="CA（证书颁发机构）" scheme="https://www.987632.xyz/tags/CA%EF%BC%88%E8%AF%81%E4%B9%A6%E9%A2%81%E5%8F%91%E6%9C%BA%E6%9E%84%EF%BC%89/"/>
     
@@ -166,15 +200,15 @@
     <category term="记录" scheme="https://www.987632.xyz/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="CA（证书颁发机构）" scheme="https://www.987632.xyz/tags/CA%EF%BC%88%E8%AF%81%E4%B9%A6%E9%A2%81%E5%8F%91%E6%9C%BA%E6%9E%84%EF%BC%89/"/>
-    
     <category term="CDN" scheme="https://www.987632.xyz/tags/CDN/"/>
+    
+    <category term="域名" scheme="https://www.987632.xyz/tags/%E5%9F%9F%E5%90%8D/"/>
+    
+    <category term="CA（证书颁发机构）" scheme="https://www.987632.xyz/tags/CA%EF%BC%88%E8%AF%81%E4%B9%A6%E9%A2%81%E5%8F%91%E6%9C%BA%E6%9E%84%EF%BC%89/"/>
     
     <category term="IPv6" scheme="https://www.987632.xyz/tags/IPv6/"/>
     
     <category term="ip6.arpa" scheme="https://www.987632.xyz/tags/ip6-arpa/"/>
-    
-    <category term="域名" scheme="https://www.987632.xyz/tags/%E5%9F%9F%E5%90%8D/"/>
     
     <category term="DNS" scheme="https://www.987632.xyz/tags/DNS/"/>
     
@@ -202,17 +236,17 @@
     
     <category term="互联网" scheme="https://www.987632.xyz/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
     
-    <category term="HTTPS" scheme="https://www.987632.xyz/tags/HTTPS/"/>
+    <category term="CDN" scheme="https://www.987632.xyz/tags/CDN/"/>
+    
+    <category term="域名" scheme="https://www.987632.xyz/tags/%E5%9F%9F%E5%90%8D/"/>
     
     <category term="SSL" scheme="https://www.987632.xyz/tags/SSL/"/>
     
     <category term="TLS" scheme="https://www.987632.xyz/tags/TLS/"/>
     
-    <category term="CDN" scheme="https://www.987632.xyz/tags/CDN/"/>
+    <category term="HTTPS" scheme="https://www.987632.xyz/tags/HTTPS/"/>
     
     <category term="IPv6" scheme="https://www.987632.xyz/tags/IPv6/"/>
-    
-    <category term="域名" scheme="https://www.987632.xyz/tags/%E5%9F%9F%E5%90%8D/"/>
     
     <category term="DNS" scheme="https://www.987632.xyz/tags/DNS/"/>
     
@@ -242,17 +276,17 @@
     
     <category term="互联网" scheme="https://www.987632.xyz/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
     
-    <category term="HTTPS" scheme="https://www.987632.xyz/tags/HTTPS/"/>
+    <category term="CDN" scheme="https://www.987632.xyz/tags/CDN/"/>
+    
+    <category term="域名" scheme="https://www.987632.xyz/tags/%E5%9F%9F%E5%90%8D/"/>
     
     <category term="SSL" scheme="https://www.987632.xyz/tags/SSL/"/>
     
     <category term="TLS" scheme="https://www.987632.xyz/tags/TLS/"/>
     
-    <category term="CDN" scheme="https://www.987632.xyz/tags/CDN/"/>
+    <category term="HTTPS" scheme="https://www.987632.xyz/tags/HTTPS/"/>
     
     <category term="IPv6" scheme="https://www.987632.xyz/tags/IPv6/"/>
-    
-    <category term="域名" scheme="https://www.987632.xyz/tags/%E5%9F%9F%E5%90%8D/"/>
     
     <category term="DNS" scheme="https://www.987632.xyz/tags/DNS/"/>
     
@@ -287,6 +321,10 @@
     
     <category term="互联网" scheme="https://www.987632.xyz/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
     
+    <category term="SSL" scheme="https://www.987632.xyz/tags/SSL/"/>
+    
+    <category term="TLS" scheme="https://www.987632.xyz/tags/TLS/"/>
+    
     <category term="内容审核" scheme="https://www.987632.xyz/tags/%E5%86%85%E5%AE%B9%E5%AE%A1%E6%A0%B8/"/>
     
     <category term="访问控制" scheme="https://www.987632.xyz/tags/%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/"/>
@@ -294,10 +332,6 @@
     <category term="敏感词" scheme="https://www.987632.xyz/tags/%E6%95%8F%E6%84%9F%E8%AF%8D/"/>
     
     <category term="HTTPS" scheme="https://www.987632.xyz/tags/HTTPS/"/>
-    
-    <category term="SSL" scheme="https://www.987632.xyz/tags/SSL/"/>
-    
-    <category term="TLS" scheme="https://www.987632.xyz/tags/TLS/"/>
     
   </entry>
   
@@ -391,11 +425,11 @@
     <category term="科普" scheme="https://www.987632.xyz/categories/%E7%A7%91%E6%99%AE/"/>
     
     
-    <category term="HTTPS" scheme="https://www.987632.xyz/tags/HTTPS/"/>
-    
     <category term="SSL" scheme="https://www.987632.xyz/tags/SSL/"/>
     
     <category term="TLS" scheme="https://www.987632.xyz/tags/TLS/"/>
+    
+    <category term="HTTPS" scheme="https://www.987632.xyz/tags/HTTPS/"/>
     
     <category term="CA（证书颁发机构）" scheme="https://www.987632.xyz/tags/CA%EF%BC%88%E8%AF%81%E4%B9%A6%E9%A2%81%E5%8F%91%E6%9C%BA%E6%9E%84%EF%BC%89/"/>
     
