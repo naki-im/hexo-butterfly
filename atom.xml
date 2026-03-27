@@ -6,7 +6,7 @@
   <link href="https://www.987632.xyz/atom.xml" rel="self"/>
   
   <link href="https://www.987632.xyz/"/>
-  <updated>2026-02-16T19:23:23.000Z</updated>
+  <updated>2026-03-04T14:19:16.000Z</updated>
   <id>https://www.987632.xyz/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何证明B站用了PCDN</title>
+    <link href="https://www.987632.xyz/posts/b3073d93/"/>
+    <id>https://www.987632.xyz/posts/b3073d93/</id>
+    <published>2026-03-04T14:19:16.000Z</published>
+    <updated>2026-03-04T14:19:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="0-引言"><a href="#0-引言" class="headerlink" title="0.引言"></a>0.引言</h1><p>众所周知，中国大陆地区的带宽成本很高（商用宽带相对家宽而言），而流媒体平台又是流量大户，平台们看着高额流量账单，心里郁闷，就有人想出个损招：直接把用户的设备当CDN节点行不行呢？——还真行，都发展成产业了。<br>这个损招就是ISP闻风丧胆誓要得而诛之的<strong>PCDN（P2P-CDN, Peer-to-Peer Content Delivery Network，点对点内容分发网络）</strong>。</p><p>我一看视频，B站似乎有PCDN？分析一下，确实有可能。</p><h1 id="1-分析视频流的URL"><a href="#1-分析视频流的URL" class="headerlink" title="1.分析视频流的URL"></a>1.分析视频流的URL</h1><p>我在B站看视频，按开F12键调到Firefox的网络面板，看到一堆HTTP请求，全是<em>206 Partial Content</em>的响应状态码，不用想，肯定是视频流。点开一看这个URL，为什么这么怪？<br><img src="https://cdn.jsdmirror.cn/gh/naki-im/img/img/20260304225922517.png" alt="Firefox-debug"></p><p>看一个请求，如下：</p><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/v1/resource/36347775999-1-30232.m4s?agrr=0&amp;build=0&amp;buvid=358B11A0-5640-65CA-BD1C-00D6A88F982109942infoc&amp;bvc=vod&amp;bw=91605&amp;cdnid=2123&amp;deadline=1772639389&amp;dl=0&amp;e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M%3D&amp;f=u_0_0&amp;gen=playurlv3&amp;lrs=46&amp;mid=1385932271&amp;nbs=1&amp;nettype=0&amp;og=cos&amp;oi=0x24098a20a84c3be444b327045f61aecc&amp;orderid=0%2C3&amp;os=bcache&amp;platform=pc&amp;qn_dyeid=95143d9c8cc5b9af0070040f69a8387d&amp;sign=e2ddb4&amp;traceid=trMfRpDHoftTTP_0_e_N&amp;uipk=5&amp;uparams=e%2Cuipk%2Ctrid%2Cdeadline%2Cgen%2Cog%2Cplatform%2Cmid%2Cnbs%2Coi%2Cos&amp;upsig=3a86d0dba89fbe72d2ea234999b69b69</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>xy223x109x235x91xy.mcdn.bilivideo.cn:8082</span><br><span class="line"><span class="attribute">User-Agent</span><span class="punctuation">: </span>Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0</span><br><span class="line"><span class="attribute">Accept</span><span class="punctuation">: </span>*/*</span><br><span class="line"><span class="attribute">Accept-Language</span><span class="punctuation">: </span>zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</span><br><span class="line"><span class="attribute">Accept-Encoding</span><span class="punctuation">: </span>gzip, deflate, br, zstd, identity</span><br><span class="line"><span class="attribute">Range</span><span class="punctuation">: </span>bytes=966822-1024147</span><br><span class="line"><span class="attribute">Origin</span><span class="punctuation">: </span>https://www.bilibili.com</span><br><span class="line"><span class="attribute">Sec-GPC</span><span class="punctuation">: </span>1</span><br><span class="line"><span class="attribute">Connection</span><span class="punctuation">: </span>keep-alive</span><br><span class="line"><span class="attribute">Referer</span><span class="punctuation">: </span>https://www.bilibili.com/</span><br><span class="line"><span class="attribute">Sec-Fetch-Dest</span><span class="punctuation">: </span>empty</span><br><span class="line"><span class="attribute">Sec-Fetch-Mode</span><span class="punctuation">: </span>cors</span><br><span class="line"><span class="attribute">Sec-Fetch-Site</span><span class="punctuation">: </span>cross-site</span><br><span class="line"><span class="attribute">Pragma</span><span class="punctuation">: </span>no-cache</span><br><span class="line"><span class="attribute">Cache-Control</span><span class="punctuation">: </span>no-cache</span><br></pre></td></tr></table></figure><p>很奇怪啊，为什么这个Host带非标端口8082？</p><h1 id="2-分析CDN域名对应IP地址"><a href="#2-分析CDN域名对应IP地址" class="headerlink" title="2.分析CDN域名对应IP地址"></a>2.分析CDN域名对应IP地址</h1><h2 id="2-1-使用dig查询域名对应IP地址"><a href="#2-1-使用dig查询域名对应IP地址" class="headerlink" title="2.1 使用dig查询域名对应IP地址"></a>2.1 使用dig查询域名对应IP地址</h2><p>看这个域名，很奇怪。<br><code>xy223x109x235x91xy.mcdn.bilivideo.cn</code>这个域名看起来就有一股临时地址的味。</p><p>DNS解析一下这个域名，找到IP地址是<code>223.109.235.91</code>,看起来就有一股家宽的味（中国大陆地区家宽IP地址有相当数量的IP地址在<code>223.0.0.0/8</code>里）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">naki@naki-im:~/docs/naki.im/hexo-butterfly$ dig @223.5.5.5 A xy223x109x235x91xy.mcdn.bilivideo.cn</span><br><span class="line"></span><br><span class="line">; &lt;&lt;&gt;&gt; DiG 9.20.15-1~deb13u1-Debian &lt;&lt;&gt;&gt; @223.5.5.5 A xy223x109x235x91xy.mcdn.bilivideo.cn</span><br><span class="line">; (1 server found)</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- <span class="string">opcode: QUERY, status: NOERROR, id: 41478</span></span><br><span class="line"><span class="string">;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">;; OPT PSEUDOSECTION:</span></span><br><span class="line"><span class="string">; EDNS: version: 0, flags:; udp: 1232</span></span><br><span class="line"><span class="string">;; QUESTION SECTION:</span></span><br><span class="line"><span class="string">;xy223x109x235x91xy.mcdn.bilivideo.cn. IN A</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">;; ANSWER SECTION:</span></span><br><span class="line"><span class="string">xy223x109x235x91xy.mcdn.bilivideo.cn. 1800 IN A223.109.235.91</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">;; Query time: 103 msec</span></span><br><span class="line"><span class="string">;; SERVER: 223.5.5.5#53(223.5.5.5) (UDP)</span></span><br><span class="line"><span class="string">;; WHEN: Wed Mar 04 22:25:09 CST 2026</span></span><br><span class="line"><span class="string">;; MSG SIZE  rcvd: 81</span></span><br></pre></td></tr></table></figure><p>等会，这域名有问题！提取数字：<br><code>xy223x109x235x91xy.mcdn.bilivideo.cn</code><br>数字字段分别是：<code>223</code>、 <code>109</code>、 <code>235</code>、 <code>91</code><br>解析出的IP是<code>223.109.235.91</code><br>破案了，域名里面藏IP！</p><h2 id="2-2-在IP2Location查询IP归属"><a href="#2-2-在IP2Location查询IP归属" class="headerlink" title="2.2 在IP2Location查询IP归属"></a>2.2 在IP2Location查询IP归属</h2><p>查询地址：<a href="https://www.ip2location.com/" rel="external nofollow noreferrer">https://www.ip2location.com/</a><br>打开查询页面，显示的信息如下：<br>（欲要查看，请<a href="https://www.ip2location.com/223.109.235.91" rel="external nofollow noreferrer">点击此处</a>）</p><p><img src="https://cdn.jsdmirror.cn/gh/naki-im/img//img/20260304231221488.png" alt="ip2location-result"></p><p>可以看出的信息：<br>归属地：江苏南京<br>运营商：中国移动<br>ASN：AS56046 China Mobile Communications Corporation<br><em>用途：(MOB) Mobile ISP</em></p><p>看：用途是移动ISP，也就是说，这些IP是分配给移动网络使用的，包括家庭宽带、4G&#x2F;5G上网用户等。也就是说，这个IP是一个（或者多个）家庭用户使用的IP地址，从而可以推断，B站的这个域名的背后大概率是PCDN。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;0-引言&quot;&gt;&lt;a href=&quot;#0-引言&quot; class=&quot;headerlink&quot; title=&quot;0.引言&quot;&gt;&lt;/a&gt;0.引言&lt;/h1&gt;&lt;p&gt;众所周知，中国大陆地区的带宽成本很高（商用宽带相对家宽而言），而流媒体平台又是流量大户，平台们看着高额流量账单，心里郁闷，就</summary>
+      
+    
+    
+    
+    <category term="记录" scheme="https://www.987632.xyz/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="互联网" scheme="https://www.987632.xyz/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
+    
+    <category term="CDN" scheme="https://www.987632.xyz/tags/CDN/"/>
+    
+    <category term="SSL" scheme="https://www.987632.xyz/tags/SSL/"/>
+    
+    <category term="TLS" scheme="https://www.987632.xyz/tags/TLS/"/>
+    
+    <category term="B站" scheme="https://www.987632.xyz/tags/B%E7%AB%99/"/>
+    
+    <category term="IPv4" scheme="https://www.987632.xyz/tags/IPv4/"/>
+    
+    <category term="PCDN" scheme="https://www.987632.xyz/tags/PCDN/"/>
+    
+  </entry>
   
   <entry>
     <title>代理协议是如何通过流量审计的</title>
